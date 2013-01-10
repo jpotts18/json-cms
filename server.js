@@ -52,9 +52,12 @@ app.post('/auth/login', auth.postLogin);
 app.get('/', routes.homepage);
 
 // accessing models
-app.get('/pages', routes.getPages);
+app.get('/page', routes.getPages);
 app.post('/pages', routes.postPages);
-app.get('/pages/:slug', routes.getPage);
+app.get('/pages/:slug', routes.sethsGetPage);
+
+app.get('/api/pages/:id/comments', routes.getPageComments);
+app.get('/api/pages/:id/blocks', routes.getPageBlocks);
 
 
 // unique id generator

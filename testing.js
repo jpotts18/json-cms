@@ -42,8 +42,8 @@ function generateFixtures(){
 
 function generatePages(){
 	var pages = [];
-	pages.push({ slug : 'page-1', isDraft : false, isPublished : true });
-	pages.push({ slug : 'page-2', isDraft : true,  isPublished : true });
+	pages.push({ slug : 'page-1', isDraft : false, isPublished : true , title : 'Home'});
+	pages.push({ slug : 'page-2', isDraft : true,  isPublished : true , title : 'About'});
 	for (var i = 0; i < pages.length; i++) {
 		Page.build(pages[i])
 			.save()
@@ -57,16 +57,18 @@ function generatePages(){
 }
 function generateBlocks(){
 	var blocks = [];
-	blocks.push({ tag : 'heading-1', body : 'This is Page one Header one', isMobile : true, pageId : 1  });
-	blocks.push({ tag : 'heading-2', body : 'This is Page one Header two', isMobile : true, pageId : 1  });
-	blocks.push({ tag : 'paragraph', body : 'This is a paragraph one for Page one text', isMobile : true, pageId : 1 });
-	blocks.push({ tag : 'paragraph', body : 'This is a paragraph two for Page one text', isMobile : true, pageId : 1 });
-	blocks.push({ tag : 'paragraph', body : 'This is a paragraph three for Page one text', isMobile : true, pageId : 1 });
-	blocks.push({ tag : 'heading-1', body : 'This is Page two Header one', isMobile : true, pageId : 2  });
-	blocks.push({ tag : 'heading-2', body : 'This is Page two Header two', isMobile : true, pageId : 2  });
-	blocks.push({ tag : 'paragraph', body : 'This is a paragraph one for Page two text', isMobile : true, pageId : 2 });
-	blocks.push({ tag : 'paragraph', body : 'This is a paragraph two for Page two text', isMobile : true, pageId : 2 });
-	blocks.push({ tag : 'paragraph', body : 'This is a paragraph three for Page two text', isMobile : true, pageId : 2 });
+	blocks.push({ tag : 'h1', content : 'This is Page one Header one', isMobile : true, pageId : 1  });
+	blocks.push({ tag : 'h2', content : 'This is Page one Header two', isMobile : true, pageId : 1  });
+	blocks.push({ tag : 'p' , content : 'This is a p one for Page one text', isMobile : true, pageId : 1 });
+	blocks.push({ tag : 'p' , content : 'This is a p two for Page one text', isMobile : true, pageId : 1 });
+	blocks.push({ tag : 'p' , content : 'This is a p three for Page one text', isMobile : true, pageId : 1 });
+	blocks.push({ tag : 'hr', content : null , isMobile : false, pageId : 1});
+
+	blocks.push({ tag : 'h1', content : 'This is Page two Header one', isMobile : true, pageId : 2  });
+	blocks.push({ tag : 'h2', content : 'This is Page two Header two', isMobile : true, pageId : 2  });
+	blocks.push({ tag : 'p' , content : 'This is a p one for Page two text', isMobile : true, pageId : 2 });
+	blocks.push({ tag : 'p' , content : 'This is a p two for Page two text', isMobile : true, pageId : 2 });
+	blocks.push({ tag : 'p' , content : 'This is a p three for Page two text', isMobile : true, pageId : 2 });
 	for (var i = 0; i < blocks.length; i++) {
 		Block.build(blocks[i])
 			.save()
@@ -80,11 +82,11 @@ function generateBlocks(){
 }
 function generateComments(){
 	var comments = 	 [];
-	comments.push({ title : 'New Comment', content : 'Great article 1', author : 'jpotts18', email : 'jpotts@gmail.com', pageId : 1 });
-	comments.push({ title : 'New Comment', content : 'Great article 2', author : 'jpotts18', email : 'jpotts@gmail.com', pageId : 1 });
-	comments.push({ title : 'New Comment', content : 'Great article 3', author : 'jpotts18', email : 'jpotts@gmail.com', pageId : 1 });
-	comments.push({ title : 'New Comment', content : 'Great article 4 for page 2', author : 'jpotts18', email : 'jpotts@gmail.com', pageId : 2 });
-	comments.push({ title : 'New Comment', content : 'Great article 5 for page 2', author : 'jpotts18', email : 'jpotts@gmail.com', pageId : 2 });
+	comments.push({ title : 'New Comment 1', content : 'Great article 1', author : 'jpotts18', email : 'jpotts@gmail.com', pageId : 1 });
+	comments.push({ title : 'New Comment 2', content : 'Great article 2', author : 'jpotts18', email : 'jpotts@gmail.com', pageId : 1 });
+	comments.push({ title : 'New Comment 3', content : 'Great article 3', author : 'jpotts18', email : 'jpotts@gmail.com', pageId : 1 });
+	comments.push({ title : 'New Comment 4', content : 'Great article 4 for page 2', author : 'jpotts18', email : 'jpotts@gmail.com', pageId : 2 });
+	comments.push({ title : 'New Comment 5', content : 'Great article 5 for page 2', author : 'jpotts18', email : 'jpotts@gmail.com', pageId : 2 });
 	for (var i = 0; i < comments.length; i++) {
 		Comment.build(comments[i])
 			.save()

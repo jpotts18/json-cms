@@ -1,0 +1,22 @@
+<html>
+	<head>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script>
+			$(function(){
+				
+				$.getJSON('/api/pages/1/comments', function(comments){
+					console.log(comments);
+				});
+
+				$.getJSON('/api/pages/1/blocks', function(comments){
+					console.log(comments);
+				});
+				
+			});
+		</script>
+		<title>Pages</title>
+	</head>
+	<body>
+
+	</body>
+</html>

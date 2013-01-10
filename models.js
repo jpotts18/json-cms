@@ -22,11 +22,12 @@ exports.Page = sequelize.define('pages',{
   isPublished : Sequelize.BOOLEAN
 , slug        : Sequelize.STRING
 , isDraft     : Sequelize.BOOLEAN
+, title       : Sequelize.STRING
 });
 
 exports.Block = sequelize.define('blocks',{
   tag       : Sequelize.STRING 
-, body      : Sequelize.TEXT
+, content      : Sequelize.TEXT
 , isMobile  : Sequelize.BOOLEAN
 });
 
