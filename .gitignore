@@ -2,4 +2,7 @@
 # Ignore these files
 
 /node_modules
+
+# local settings 
 config.js
+config.js-template
