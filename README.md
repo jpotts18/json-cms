@@ -23,8 +23,9 @@ JSON CMS
 	- if you want to rebuild the database `node server.js rebuild` 
 	- if you want to run the server normally it is `node server.js` or `npm start`
 4. After running go to this address:
-
-	http://locahost:7890/
+	- `http://localhost:7890/page` is my proof of concept currently 
+	- `http://localhost:7890/api/pages/1/comments`
+	- `http://localhost:7890/api/pages/1/blocks`
 
 ### To contribute:
 
