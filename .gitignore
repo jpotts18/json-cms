@@ -1,0 +1,5 @@
+
+# Ignore these files
+
+/node_modules
+config.js
