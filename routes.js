@@ -21,39 +21,24 @@ exports.getPage = function(req,res){
 
 	Page.find({where: {slug : slug}})
 		.success(function(page){
-			if(page){
-				data = page;
-				page.getBlocks()
-					.success(function(blocks){
-						if(blocks){
-							data.blocks = blocks;
-							console.log(data);	
-
-							page.getComments()
-								.success(function(comments){
-									if(comments){
-
-									data.comments = comments;
-									console.log(data);
-									res.send(data);
-									}else{
-										res.send({error: 'Comments not found'});
-									}
-								})
-								.error(function(error){
-									res.send({error:'Comments not found'})
-								});
-						}else{
-							res.send({error:'blocks not found'});	
-						}
-							})							
-					.error(function(error){
-						res.send({error:'blocks not found'});
-					});	
+			page.getBlocks()
+				.success(function(blocks){
+					data.blocks = blocks;
+					console.log(data);	
+						page.getComments()
+						.success(function(comments){
+								data.comments = comments;
+								console.log(data);
+								res.send(data);
+						})
+						.error(function(error){
+							res.send({error:'Comments not found'})
+						});
 					
-			}else{
-				res.send({error:'404 page not found'});
-			}
+				})							
+				.error(function(error){
+					res.send({error:'blocks not found'});
+				});	
 		})
 		.error(function(error){
 			res.send({error:'Page not found'});

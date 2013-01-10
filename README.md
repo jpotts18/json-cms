@@ -1,10 +1,13 @@
-Multi-Room Chat Application
+JSON CMS
 ===
 
+## Why is it Useful
 
-This application was adapted from Udi Talias' node.js and socket.io tutorial.
-It includes a server built in node.js and a html client.
+Data comes down from the server without being forced into a specific format, the client can decide how to parse it.
+The information is not dependent on the cms being on the web. It can be used on mobile devices as well.
+Removes the styling that is inherent in html.
 
+## Client Side Javascript Library
 
 ### To run:
 
@@ -23,6 +26,7 @@ Please be sure you have expressjs and socket.io modules installed before running
 On Windows/Mac/Linux:
 
 	$ node server.js
+	$ node server.js rebuild (dumps database and rebuild)
 	
 After running go to this address:
 

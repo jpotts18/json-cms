@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "express": "3.0.2",
-    "sequelize":"1.4.1"
+    "sequelize":"1.4.1",
+    "password-hash":"1.2.1",
   }
 }
