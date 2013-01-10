@@ -17,29 +17,37 @@ exports.homepage = function (req, res) {
 exports.getPage = function(req,res){
 	var slug = req.params.slug;
 
-	var data = {}
+	// Page is a model this runs a Select * from 'pages' where slug = '?'
 
 	Page.find({where: {slug : slug}})
+		// this returns a single page object
 		.success(function(page){
+			console.log(page);
+			// I have defined relationships in models.js so I can access the blocks
 			page.getBlocks()
+				// on successfully finding the blocks they are returned
 				.success(function(blocks){
-					data.blocks = blocks;
-					console.log(data);	
-						page.getComments()
+					console.log(blocks);
+					// addiing the blocsk to the page object
+					page.blocks = blocks;
+						// I have defined this relationsihp in models.js so I can access the comments
+						page.getComments();
 						.success(function(comments){
-								data.comments = comments;
-								console.log(data);
-								res.send(data);
+							// adding the comments to the page object
+							page.comments = comments;
+							console.log(comments);
+							// the page with all of the comments, blocks as a response
+							res.send(page);
 						})
 						.error(function(error){
-							res.send({error:'Comments not found'})
+							res.send({error:'Comments not found'});
 						});
 					
 				})							
 				.error(function(error){
 					res.send({error:'blocks not found'});
-				});	
-		})
+				});
+		})	
 		.error(function(error){
 			res.send({error:'Page not found'});
 		});
