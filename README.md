@@ -9,7 +9,7 @@ JSON CMS
 
 ## Client Side Javascript Library
 
-- [Angular.js](http://angularjs.org/) based front-end
+- [Angular.js](http://angularjs.org/) based front-end (Still to come - Currently jQuery)
 - Consumes REST api and dynamically creates UI
 - User module built 
 
@@ -23,6 +23,7 @@ JSON CMS
 	- if you want to rebuild the database `node server.js rebuild` 
 	- if you want to run the server normally it is `node server.js` or `npm start`
 4. After running go to this address:
+
 	http://locahost:7890/
 
 ### To contribute:
